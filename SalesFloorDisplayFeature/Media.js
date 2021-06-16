@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import CardFlip from 'react-native-card-flip';
 import {View, Text, StyleSheet} from 'react-native';
 import {
   ChildrensPrice,
@@ -100,7 +101,7 @@ const MediaHeader = () => {
 };
 export const Books = () => {
   const [childrensPrice] = useContext(ChildrensPrice);
-  const [softcoverPrice] = useContext(SoftcoverPrice);
+  const [softcoverPrice, setSoftcoverPrice ] = useContext(SoftcoverPrice);
   const [hardcoverPrice] = useContext(HardcoverPrice);
 
   return (
