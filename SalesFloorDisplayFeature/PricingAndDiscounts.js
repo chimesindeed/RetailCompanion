@@ -66,17 +66,17 @@ export const PricingAndDiscounts = () => {
     <View style = {styles.pricingAndDiscountsContainer}>
       <PricingAndDiscountsHeader />
       
-        <View style={styles.pricingAndDiscountsBody}>
+      <View style={styles.pricingAndDiscountsBody}>
       
-          <View style={styles.colorsView}>
-            <Colors />
-          </View>
+        <View style={styles.colorsView}>
+          <Colors />
+        </View>
 
-          <View style={styles.mediaView}>
-            <Books />
-           <LineDivider/>
-            <Media />
-          </View>
+        <View style={styles.mediaView}>
+          <Books />
+          <LineDivider/>
+          <Media />
+        </View>
       </View>
     </View>
   );
