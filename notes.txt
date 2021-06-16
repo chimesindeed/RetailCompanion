@@ -1,0 +1,17 @@
+For deploying onto Netlify
+
+Notes: 
+
+Commands for Expo:
+expo build:web
+
+puts application in folder for static site
+
+Commands for Netlify:
+
+netlify deploy
+deploys draft link to application
+
+
+netlify deploy --prod
+deploys application

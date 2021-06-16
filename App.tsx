@@ -29,17 +29,17 @@ export const InstagramLink = React.createContext('');
 const Drawer = createDrawerNavigator();
 
 const App = () => {
-  const [childrensPrice, setChildrensPrice] = useState(0.49);
-  const [softcoverPrice, setSoftcoverPrice] = useState(0.99);
-  const [hardcoverPrice, setHardcoverPrice] = useState(1.99);
-  const [albumsPrice, setAlbumsPrice] = useState(1.99);
-  const [tapesPrice, setTapesPrice] = useState(1.99);
-  const [cdsPrice, setCdsPrice] = useState(1.99);
-  const [dvdsPrice, setDvdsPrice] = useState(2.99);
-  const [setsPrice, setSetsPrice] = useState('As Marked');
-  const [storeAddress1, setStoreAddress1] = useState('536 W. 46th St');
-  const [storeAddress2, setStoreAddress2] = useState('10th & 11th Ave');
-  const [storePhone, setStorePhone] = useState('212.757.2311');
+  const [childrensPrice, setChildrensPrice] = useState<number>(0.49);
+  const [softcoverPrice, setSoftcoverPrice] = useState<number>(0.99);
+  const [hardcoverPrice, setHardcoverPrice] = useState<number>(1.99);
+  const [albumsPrice, setAlbumsPrice] = useState<number>(1.99);
+  const [tapesPrice, setTapesPrice] = useState<number>(1.99);
+  const [cdsPrice, setCdsPrice] = useState<number>(1.99);
+  const [dvdsPrice, setDvdsPrice] = useState<number>(2.99);
+  const [setsPrice, setSetsPrice] = useState<string>('As Marked');
+  const [storeAddress1, setStoreAddress1] = useState<string>('536 W. 46th St');
+  const [storeAddress2, setStoreAddress2] = useState<string>('10th & 11th Ave');
+  const [storePhone, setStorePhone] = useState<string>('212.757.2311');
 
   const getChildrensPrice = async () => {
     let childrens;

@@ -13,18 +13,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 40,
+    marginLeft: 20,
   },
   logoAndAddressContainer: {
+    alignSelf: 'flex-start',
     flexDirection: 'column',
-    marginLeft: 20,
-    marginBottom: 20,
+    marginTop: 5,
   },
   SALogo: {
     letterSpacing: 1,
     fontWeight: '700',
     color: 'navy',
     fontSize: 44,
-    marginBottom: -7,
   },
 
   addressContainer: {
@@ -34,10 +34,10 @@ const styles = StyleSheet.create({
   addressText: {
     color: 'navy',
     paddingRight: 7,
-    fontSize: 12,
+    fontSize: 15,
   },
   phoneText: {
-    fontSize: 14,
+    fontSize: 17,
     marginTop: -2,
     marginLeft: 5,
     color: 'maroon',
@@ -46,10 +46,14 @@ const styles = StyleSheet.create({
 
   rightsideHeader: {
     alignSelf: 'flex-end',
+    flexDirection: 'column',
+    marginTop: 10,
+    marginRight: 10,
   },
   storeHoursContainer: {
     flexDirection: 'column',
     marginRight: 20,
+    marginBottom: 15,
   },
   storeHoursHeader: {
     alignSelf: 'center',
@@ -57,20 +61,20 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: 'teal',
     marginBottom: 1,
-    fontSize: 17,
+    fontSize: 23,
   },
   storeHours: {
     alignSelf: 'center',
     letterSpacing: 1,
     color: 'teal',
     marginBottom: 1,
-    fontSize: 16,
+    fontSize: 17,
   },
   restroomsContainer: {
     flexDirection: 'column',
-    marginLeft: 90,
+    marginRight: -40,
+    marginBottom: 30,
   },
-
   restroomsHeader: {
     alignSelf: 'center',
     letterSpacing: 1,
@@ -78,20 +82,21 @@ const styles = StyleSheet.create({
     color: 'black',
     marginTop: 10,
     marginBottom: 1,
-    fontSize: 17,
+    fontSize: 23,
   },
   restrooms: {
     alignSelf: 'center',
     letterSpacing: 1,
     color: 'black',
     marginBottom: 1,
-    fontSize: 16,
+    fontSize: 17,
   },
 
   exchangePolicyContainer: {
     alignSelf: 'flex-end',
     flexDirection: 'column',
-    marginTop: 20,
+    marginRight: 50,
+  
   },
 
   exchangePolicyHeader: {
@@ -100,22 +105,23 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: 'red',
     marginBottom: 1,
-    marginRight: 55,
-    fontSize: 17,
+    fontSize: 23,
   },
   exchangePolicy: {
     letterSpacing: 1,
     fontWeight: '700',
     color: 'red',
     marginBottom: 1,
-    fontSize: 16,
+    fontSize: 17,
   },
 });
+
+const storeLogo = "S.A. Retail - Store Companion"
 
 const SALogo = () => {
   return (
     <View>
-      <Text style={styles.SALogo}>S.A. Retail Hub</Text>
+      <Text style={styles.SALogo}>{storeLogo}</Text>
     </View>
   );
 };
@@ -157,7 +163,7 @@ const StoreDetails = () => {
     </View>
   );
 };
-const AppHeader = () => {
+const SalesFloorDisplayHeader = () => {
   return (
     <View style={styles.headerContainer}>
       <View style={styles.logoAndAddressContainer}>
@@ -168,4 +174,4 @@ const AppHeader = () => {
     </View>
   );
 };
-export default AppHeader;
+export default SalesFloorDisplayHeader;

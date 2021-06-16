@@ -12,20 +12,20 @@ import {
 } from '../App';
 
 const styles = StyleSheet.create({
-  addLineSpace: {
-    lineHeight: 40,
-  },
+
   combined: {
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
   header: {
     alignSelf: 'center',
-    fontSize: 16,
+    letterSpacing: 2,
+    fontSize: 24,
     fontWeight: '700',
     textDecorationLine: 'underline',
+    color: 'tan',
     marginBottom: 14,
-    marginTop: 6,
+    marginTop: 45,
   },
 
   prices: {
@@ -34,30 +34,30 @@ const styles = StyleSheet.create({
     marginBottom: 1,
     paddingRight: 10,
     marginRight: 3,
-    fontSize: 15,
+    fontSize: 20,
   },
   softcover: {
     color: 'navy',
-    marginBottom: 1,
-    fontSize: 15,
+    marginBottom: 30,
+    fontSize: 20,
   },
   hardcover: {
     color: 'navy',
-    marginBottom: 1,
-    fontSize: 15,
+    marginBottom: 25,
+    fontSize: 20,
   },
   childrens: {
     color: 'lightblue',
     marginBottom: 2,
-    fontSize: 15,
+    fontSize: 20,
   },
 
   media: {
     color: 'maroon',
-    marginBottom: 1,
+    marginBottom: 10,
     paddingRight: 10,
     marginRight: 3,
-    fontSize: 15,
+    fontSize: 20,
   },
   mediaDivider: {
     backgroundColor: 'beige',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     marginRight: 7,
     marginTop: 43,
     width: 1,
-    height: 133,
+    height: 200,
   },
 });
 
@@ -111,19 +111,10 @@ export const Books = () => {
           <Text style={styles.prices}>{`${softcoverPrice}`}</Text>
           <Text style={styles.softcover}>{`${softcover}`}</Text>
         </View>
+        
         <View style={styles.combined}>
-          <Text
-            style={Object.assign(
-              {},
-              styles.prices,
-              styles.addLineSpace,
-            )}>{`${hardcoverPrice}`}</Text>
-          <Text
-            style={Object.assign(
-              {},
-              styles.hardcover,
-              styles.addLineSpace,
-            )}>{`${hardcover}`}</Text>
+        <Text style={styles.prices}>{`${hardcoverPrice}`}</Text>
+          <Text style={styles.hardcover}>{`${hardcover}`}</Text>
         </View>
         <View style={styles.combined}>
           <Text style={styles.prices}>{`${childrensPrice}`}</Text>
