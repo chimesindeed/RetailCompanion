@@ -2,9 +2,6 @@ import React, {useContext} from 'react';
 import CardFlip from 'react-native-card-flip';
 import {View, Text, StyleSheet} from 'react-native';
 import {
-  ChildrensPrice,
-  SoftcoverPrice,
-  HardcoverPrice,
   AlbumsPrice,
   TapesPrice,
   CdsPrice,
@@ -28,7 +25,6 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     marginTop: 45,
   },
-
   prices: {
     color: 'white',
     letterSpacing: 1,
@@ -37,22 +33,6 @@ const styles = StyleSheet.create({
     marginRight: 3,
     fontSize: 20,
   },
-  softcover: {
-    color: 'navy',
-    marginBottom: 30,
-    fontSize: 20,
-  },
-  hardcover: {
-    color: 'navy',
-    marginBottom: 25,
-    fontSize: 20,
-  },
-  childrens: {
-    color: 'lightblue',
-    marginBottom: 2,
-    fontSize: 20,
-  },
-
   media: {
     color: 'maroon',
     marginBottom: 10,
@@ -81,13 +61,7 @@ const cds = 'Cds';
 const dvds = 'Dvds';
 const sets = 'Sets';
 
-const BooksHeader = () => {
-  return (
-    <View>
-      <Text style={styles.header}>{`${books}`}</Text>
-    </View>
-  );
-};
+
 
 export const LineDivider = () => {
   return <View style={styles.mediaDivider} />;
@@ -99,32 +73,7 @@ const MediaHeader = () => {
     </View>
   );
 };
-export const Books = () => {
-  const [childrensPrice] = useContext(ChildrensPrice);
-  const [softcoverPrice, setSoftcoverPrice ] = useContext(SoftcoverPrice);
-  const [hardcoverPrice] = useContext(HardcoverPrice);
 
-  return (
-    <View>
-      <BooksHeader />
-      <View>
-        <View style={styles.combined}>
-          <Text style={styles.prices}>{`${softcoverPrice}`}</Text>
-          <Text style={styles.softcover}>{`${softcover}`}</Text>
-        </View>
-        
-        <View style={styles.combined}>
-        <Text style={styles.prices}>{`${hardcoverPrice}`}</Text>
-          <Text style={styles.hardcover}>{`${hardcover}`}</Text>
-        </View>
-        <View style={styles.combined}>
-          <Text style={styles.prices}>{`${childrensPrice}`}</Text>
-          <Text style={styles.childrens}>{`${childrens}`}</Text>
-        </View>
-      </View>
-    </View>
-  );
-};
 
 export const Media = () => {
   const [albumsPrice] = useContext(AlbumsPrice);

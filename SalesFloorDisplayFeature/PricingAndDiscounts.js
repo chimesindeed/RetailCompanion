@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, ScrollView, StyleSheet} from 'react-native';
 import {Colors} from './ColorComponents/Colors';
-import {Books, Media, LineDivider} from './Media';
+import {Media, LineDivider} from './Media';
+import {BooksContainer} from './books/BooksContainer'
 
 const styles = StyleSheet.create({
   
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   
     backgroundColor: '#778899',
   },
-  mediaView: {
+  booksAndMediaView: {
     justifyContent: 'space-around',
     flexDirection: 'row',
     width: 500,
@@ -72,8 +73,8 @@ export const PricingAndDiscounts = () => {
           <Colors />
         </View>
 
-        <View style={styles.mediaView}>
-          <Books />
+        <View style={styles.booksAndMediaView}>
+          <BooksContainer/>
           <LineDivider/>
           <Media />
         </View>
