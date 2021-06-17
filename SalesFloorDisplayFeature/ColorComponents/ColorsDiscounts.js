@@ -3,17 +3,6 @@ import {View, Text, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
  
-  header2: {
-    alignSelf: 'center',
-    textDecorationLine: 'underline',
-    fontSize: 24,
-    fontWeight: '700',
-    marginBottom: 18,
-    marginTop: 45,
-    marginLeft: 5,
-    letterSpacing: 2,
-    color: 'tan'
-  },
   yellow: {
     alignSelf: 'center',
     letterSpacing: 1,
@@ -94,8 +83,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
   },
-});
-const colorsHeader = 'DISCOUNT SCHEDULE';
+})
+
 const discountedItems = 'CLOTHES / HANDBAGS';
 const yellow = 'Yellow Tickets';
 const green = 'Green Tickets';
@@ -104,14 +93,6 @@ const white = 'White Tickets';
 const pink = 'Pink Tickets';
 const fiftyPercent = '50%';
 const ninetyNine = '99 Cents';
-
-const ColorsDiscountsHeader = () => {
-  return (
-    <View>
-      <Text style={styles.header2}>{`${discountedItems}`}</Text>
-    </View>
-  );
-};
 
 const Yellow = () => {
   return (
@@ -165,7 +146,7 @@ const Pink = () => {
 
 const startingDate = new Date('October 25, 2020');
 
-export const Colors = () => {
+export const ColorsDiscounts = () => {
   const [color, setColor] = useState('loading...');
 
   const daysPassed = (dStart = startingDate) => {
@@ -212,8 +193,8 @@ export const Colors = () => {
   };
   return (
     <View>
-      <ColorsDiscountsHeader />
       {renderDiscounts()}
     </View>
   );
 };
+  

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Dimensions, View, StyleSheet, Button} from 'react-native';
 import SalesFloorDisplayHeader from './Headers/SalesFloorDisplayHeader';
-import {PricingAndDiscounts} from './PricingAndDiscounts';
+import {PricingAndDiscountsContainer} from './pricing-and-discounts/PricingAndDiscountsContainer'
 
 let ScreenHeight = Dimensions.get('window').height;
 let ScreenWidth = Dimensions.get('window').width;
@@ -21,7 +21,7 @@ const SalesFloorDisplayScreen = (props) => {
     <View style={styles.appContainer}>
       <Button onPress={toggle}>Toggle</Button>
       <SalesFloorDisplayHeader/>
-      <PricingAndDiscounts/>
+      <PricingAndDiscountsContainer/>
     </View>
   );
 };

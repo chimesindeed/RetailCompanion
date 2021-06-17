@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 
@@ -13,6 +13,7 @@ mediaHeader: {
   color: 'tan',
   marginBottom: 14,
   marginTop: 45,
+  
 }
 })
 

@@ -1,7 +1,7 @@
-import React, {useContext} from 'react'
+import React, {useContext} from 'react';
 import CardFlip from 'react-native-card-flip';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {HardcoverPrice} from '../../App'
+import {View, Text,  TouchableOpacity, StyleSheet } from 'react-native';
+import { AlbumsPrice } from '../../App';
 
 const styles = StyleSheet.create({
 
@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   
-  hardcover: {
-    color: 'navy',
+  albums: {
+    color: 'maroon',
     marginBottom: 30,
     fontSize: 20,
   },
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   },
 })
 
+
 class CardFlipWrapper extends React.Component { 
 
   render(){
@@ -44,8 +45,8 @@ class CardFlipWrapper extends React.Component {
           }
         >
           <View style={styles.itemAndPrice}>
-            <Text style={styles.prices}>{`${this.props.hardcoverPrice}`}</Text>
-            <Text style={styles.hardcover}>{`${this.props.hardcover}`}</Text>
+            <Text style={styles.prices}>{`${this.props.albumsPrice}`}</Text>
+            <Text style={styles.albums}>{`${this.props.albums}`}</Text>
           </View>
 
         </TouchableOpacity>
@@ -62,14 +63,14 @@ class CardFlipWrapper extends React.Component {
     )
   }
 }
-export const  Hardcover = () => {
-  const hardcover = "Hardcover"
-  const [hardcoverPrice] = useContext(HardcoverPrice);
+export const Albums = () => {
+  const albums = 'Albums';
+  const [albumsPrice] = useContext(AlbumsPrice);
 
   return (
     <CardFlipWrapper
-      hardcover = {hardcover}
-      hardcoverPrice= {hardcoverPrice}
+      albums = {albums}
+      albumsPrice= {albumsPrice}
 
     />
   ) 
