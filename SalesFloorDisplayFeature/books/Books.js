@@ -8,9 +8,18 @@ export const Books = () => {
  
   return (
     <View>
-      <Softcover/>
-      <Hardcover/>     
-      <Childrens/>
+      <View style={{marginBottom: 30}}>
+        <Softcover/>
+      </View>
+      
+      <View style={{marginBottom: 30}}>
+        <Hardcover/>
+      </View>
+
+      <View style={{marginBottom: 30}}>
+        <Childrens/>
+      </View>
+
     </View>
   );
 };

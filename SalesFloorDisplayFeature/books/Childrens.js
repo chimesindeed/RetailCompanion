@@ -1,8 +1,14 @@
 import React, {useContext} from 'react'
-import {View, Text, StyleSheet } from 'react-native';
+import CardFlip from 'react-native-card-flip';
+import {View, Text,  TouchableOpacity,  StyleSheet } from 'react-native';
 import {ChildrensPrice} from '../../App'
 
 const styles = StyleSheet.create({
+
+  cardContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
 
   itemAndPrice: {
     flexDirection: 'row',
@@ -24,18 +30,46 @@ const styles = StyleSheet.create({
   },
 })
 
+class CardFlipWrapper extends React.Component { 
+
+  render(){
+    return (
+      <CardFlip ref={(card) => this.card = card} >
+        
+        <TouchableOpacity style={styles.cardContainer}
+         
+          onPress={
+            () => this.card.flip()
+          }
+        >
+          <View style={styles.itemAndPrice}>
+            <Text style={styles.prices}>{`${this.props.childrensPrice}`}</Text>
+            <Text style={styles.childrens}>{`${this.props.childrens}`}</Text>
+          </View>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.card}
+          onPress={
+            () => this.card.flip()
+          }
+        >
+          <Text>CD</Text>
+        </TouchableOpacity>  
+      </CardFlip>
+    )
+  }
+}
 export const Childrens = () => {
   const childrens = "Childrens"
   const [childrensPrice] = useContext(ChildrensPrice);
 
   return (
-    <View style={styles.itemAndPrice}>
-      
-      <Text style={styles.prices}>{`${childrensPrice}`}</Text>
-      
-      <Text style={styles.childrens}>{`${childrens}`}</Text>
-    
-    </View>
-  )
+    <CardFlipWrapper
+      childrens = {childrens}
+      childrensPrice= {childrensPrice}
 
+    />
+  ) 
 }

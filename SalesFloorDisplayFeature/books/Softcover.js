@@ -1,8 +1,14 @@
 import React, {useContext} from 'react'
-import {View, Text, StyleSheet } from 'react-native';
+import CardFlip from 'react-native-card-flip';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {SoftcoverPrice} from '../../App'
 
 const styles = StyleSheet.create({
+  
+  cardContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
 
   itemAndPrice: {
     flexDirection: 'row',
@@ -24,19 +30,46 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
+class CardFlipWrapper extends React.Component { 
 
-export const Softcover = () => {
+  render(){
+    return (
+      <CardFlip ref={(card) => this.card = card} >
+        
+        <TouchableOpacity style={styles.cardContainer}
+         
+          onPress={
+            () => this.card.flip()
+          }
+        >
+          <View style={styles.itemAndPrice}>
+            <Text style={styles.prices}>{`${this.props.softcoverPrice}`}</Text>
+            <Text style={styles.softcover}>{`${this.props.softcover}`}</Text>
+          </View>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.card}
+          onPress={
+            () => this.card.flip()
+          }
+        >
+          <Text>CD</Text>
+        </TouchableOpacity>  
+      </CardFlip>
+    )
+  }
+}
+export const  Softcover = () => {
   const softcover = "Softcover"
   const [softcoverPrice] = useContext(SoftcoverPrice);
 
   return (
-    <View style={styles.itemAndPrice}>
-      
-      <Text style={styles.prices}>{`${softcoverPrice}`}</Text>
-      
-      <Text style={styles.softcover}>{`${softcover}`}</Text>
-    
-    </View>
-  )
+    <CardFlipWrapper
+      softcover = {softcover}
+      softcoverPrice= {softcoverPrice}
 
+    />
+  ) 
 }
