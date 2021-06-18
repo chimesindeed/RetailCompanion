@@ -3,15 +3,16 @@ import {View, Text, StyleSheet} from 'react-native'
 import { BooksHeader} from './BooksHeader'
 import { Books } from './Books'
 
-// const styles = StyleSheet.create({
-
-  
-// }) 
+const styles = StyleSheet.create({
+  booksContainer: {
+    flexDirection: 'column',
+  }
+}) 
 
 export const BooksContainer = () => {
 
   return (
-    <View>
+    <View style={styles.booksContainer}>
       <BooksHeader/>
       <Books/>
     </View>

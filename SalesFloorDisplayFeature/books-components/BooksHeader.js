@@ -1,11 +1,11 @@
 import React from 'react'
-import { Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 
-mediaHeader: {
+booksHeader: {
 
-  alignSelf: 'center',
+  marginLeft: 30,
   letterSpacing: 2,
   fontSize: 24,
   fontWeight: '700',
@@ -13,14 +13,13 @@ mediaHeader: {
   color: 'tan',
   marginBottom: 14,
   marginTop: 45,
-  
 }
 })
 
-const media = "Media"
+const books = "Books"
 
-export const MediaHeader = () => {
+export const BooksHeader = () => {
   return (
-    <Text style={styles.mediaHeader}>{`${media}`}</Text>
+    <Text style={styles.booksHeader}>{`${books}`}</Text>
   );
 };

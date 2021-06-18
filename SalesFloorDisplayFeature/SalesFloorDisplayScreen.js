@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Dimensions, View, StyleSheet, Button} from 'react-native';
 import SalesFloorDisplayHeader from './Headers/SalesFloorDisplayHeader';
-import {PricingAndDiscountsContainer} from './pricing-and-discounts/PricingAndDiscountsContainer'
+import {PricingAndDiscountsContainer} from './pricing-and-discounts-components/PricingAndDiscountsContainer'
 
 let ScreenHeight = Dimensions.get('window').height;
 let ScreenWidth = Dimensions.get('window').width;

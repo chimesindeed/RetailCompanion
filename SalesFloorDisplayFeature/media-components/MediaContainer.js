@@ -1,20 +1,20 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { MediaHeader } from './MediaHeader'
-import { MediaDivider } from './MediaDivider'
+
 import { Media } from './Media'
 
-// const styles = StyleSheet.create({
-
-  
-// }) 
+const styles = StyleSheet.create({
+  mediaContainer: {
+    flexDirection: 'column',
+  }
+}) 
 
 export const MediaContainer = () => {
 
   return (
-    <View>
+    <View style={styles.mediaContainer}>
       <MediaHeader/>
-      <MediaDivider/>
       <Media/>
     </View>
   )

@@ -1,10 +1,11 @@
-import React, {useContext} from 'react';
+import React, {useContext} from 'react'
 import CardFlip from 'react-native-card-flip';
-import {View, Text,  TouchableOpacity, StyleSheet } from 'react-native';
-import { AlbumsPrice } from '../../App';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {HardcoverPrice} from '../../App'
+import { PriceEditHardcover } from '../edit-price-components/PriceEditHardcover';
 
 const styles = StyleSheet.create({
-
+  
   cardContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -15,9 +16,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   
-  albums: {
-    color: 'maroon',
-    marginBottom: 30,
+  hardcover: {
+    color: 'navy',
     fontSize: 20,
   },
   
@@ -30,8 +30,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
-
-
 class CardFlipWrapper extends React.Component { 
 
   render(){
@@ -45,14 +43,14 @@ class CardFlipWrapper extends React.Component {
           }
         >
           <View style={styles.itemAndPrice}>
-            <Text style={styles.prices}>{`${this.props.albumsPrice}`}</Text>
-            <Text style={styles.albums}>{`${this.props.albums}`}</Text>
+            <Text style={styles.prices}>{`${this.props.hardcoverPrice}`}</Text>
+            <Text style={styles.hardcover}>{`${this.props.hardcover}`}</Text>
           </View>
 
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.card}
+          style={styles.cardContainer}
           onPress={
             () => this.card.flip()
           }
@@ -63,14 +61,14 @@ class CardFlipWrapper extends React.Component {
     )
   }
 }
-export const Albums = () => {
-  const albums = 'Albums';
-  const [albumsPrice] = useContext(AlbumsPrice);
+export const  Hardcover = () => {
+  const hardcover = "Hardcover"
+  const [hardcoverPrice] = useContext(HardcoverPrice);
 
   return (
     <CardFlipWrapper
-      albums = {albums}
-      albumsPrice= {albumsPrice}
+      hardcover = {hardcover}
+      hardcoverPrice= {hardcoverPrice}
 
     />
   ) 

@@ -1,10 +1,11 @@
 import React, {useContext} from 'react'
 import CardFlip from 'react-native-card-flip';
-import {View, Text,  TouchableOpacity,  StyleSheet } from 'react-native';
-import {ChildrensPrice} from '../../App'
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {SoftcoverPrice} from '../../App'
+import { PriceEditSoftcover } from '../edit-price-components/PriceEditSoftcover';
 
 const styles = StyleSheet.create({
-
+  
   cardContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -14,13 +15,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  childrens: {
-    color: 'lightblue',
-    marginBottom: 2,
+  
+  softcover: {
+    color: 'navy',
     fontSize: 20,
   },
-
-    prices: {
+  
+  prices: {
     color: 'white',
     letterSpacing: 1,
     marginBottom: 1,
@@ -29,7 +30,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
-
 class CardFlipWrapper extends React.Component { 
 
   render(){
@@ -43,32 +43,36 @@ class CardFlipWrapper extends React.Component {
           }
         >
           <View style={styles.itemAndPrice}>
-            <Text style={styles.prices}>{`${this.props.childrensPrice}`}</Text>
-            <Text style={styles.childrens}>{`${this.props.childrens}`}</Text>
+            <Text style={styles.prices}>{`${this.props.softcoverPrice}`}</Text>
+            <Text style={styles.softcover}>{`${this.props.softcover}`}</Text>
           </View>
 
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.card}
+        <TouchableOpacity style={styles.cardContainer}
+          
           onPress={
             () => this.card.flip()
           }
         >
-          <Text>CD</Text>
+          <View style={styles.itemAndPrice}>
+            <Text style={styles.prices}>{`${this.props.softcoverPrice}`}</Text>
+            <Text style={styles.softcover}>{`${this.props.softcover}`}</Text>
+          </View>
+          
         </TouchableOpacity>  
       </CardFlip>
     )
   }
 }
-export const Childrens = () => {
-  const childrens = "Childrens"
-  const [childrensPrice] = useContext(ChildrensPrice);
+export const  Softcover = () => {
+  const softcover = "Softcover"
+  const [softcoverPrice] = useContext(SoftcoverPrice);
 
   return (
     <CardFlipWrapper
-      childrens = {childrens}
-      childrensPrice= {childrensPrice}
+      softcover = {softcover}
+      softcoverPrice= {softcoverPrice}
 
     />
   ) 
