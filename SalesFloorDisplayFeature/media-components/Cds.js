@@ -62,7 +62,7 @@ class CardFlipWrapper extends React.Component {
     )
   }
 }
-export const  Cds = () => {
+export const Cds = () => {
   const cds = "Cds"
   const [cdsPrice] = useContext(CdsPrice);
 

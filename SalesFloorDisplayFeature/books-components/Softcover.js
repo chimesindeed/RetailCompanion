@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import CardFlip from 'react-native-card-flip';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import {SoftcoverPrice} from '../../App'
 import { PriceEditSoftcover } from '../edit-price-components/PriceEditSoftcover';
 
@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   },
 })
 class CardFlipWrapper extends React.Component { 
-
+  
+ 
   render(){
     return (
       <CardFlip ref={(card) => this.card = card} >
@@ -55,10 +56,7 @@ class CardFlipWrapper extends React.Component {
             () => this.card.flip()
           }
         >
-          <View style={styles.itemAndPrice}>
-            <Text style={styles.prices}>{`${this.props.softcoverPrice}`}</Text>
-            <Text style={styles.softcover}>{`${this.props.softcover}`}</Text>
-          </View>
+          <PriceEditSoftcover/>
           
         </TouchableOpacity>  
       </CardFlip>

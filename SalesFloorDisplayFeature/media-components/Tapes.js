@@ -3,6 +3,7 @@ import CardFlip from 'react-native-card-flip';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {TapesPrice} from '../../App'
 import { PriceEditTapes } from '../edit-price-components/PriceEditTapes';
+import CardFlipWrapper from '../CardFlipWrapper';
 
 const styles = StyleSheet.create({
   
@@ -31,46 +32,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
-class CardFlipWrapper extends React.Component { 
 
-  render(){
-    return (
-      <CardFlip ref={(card) => this.card = card} >
-        
-        <TouchableOpacity style={styles.cardContainer}
-         
-          onPress={
-            () => this.card.flip()
-          }
-        >
-          <View style={styles.itemAndPrice}>
-            <Text style={styles.prices}>{`${this.props.tapesPrice}`}</Text>
-            <Text style={styles.tapes}>{`${this.props.tapes}`}</Text>
-          </View>
-
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.cardContainer}
-          onPress={
-            () => this.card.flip()
-          }
-        >
-          <Text>CD</Text>
-        </TouchableOpacity>  
-      </CardFlip>
-    )
-  }
-}
-export const  Tapes = () => {
+export const Tapes = () => {
   const tapes = "Tapes"
   const [tapesPrice] = useContext(TapesPrice);
 
   return (
     <CardFlipWrapper
-      tapes = {tapes}
-      tapesPrice= {tapesPrice}
-
-    />
+      cardContainerStyle={styles.cardContainer}
+      itemAndPriceStyle={styles.itemAndPrice}
+      priceStyle={styles.prices}
+      price={tapesPrice}
+      itemStyle={styles.tapes}
+      item={tapes}
+    >
+      <PriceEditTapes/>
+    </CardFlipWrapper>
   ) 
 }
