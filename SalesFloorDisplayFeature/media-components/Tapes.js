@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
-import CardFlip from 'react-native-card-flip';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {TapesPrice} from '../../App'
 import { PriceEditTapes } from '../edit-price-components/PriceEditTapes';
 import CardFlipWrapper from '../CardFlipWrapper';
