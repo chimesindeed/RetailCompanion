@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
-import CardFlip from 'react-native-card-flip';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {DvdsPrice} from '../../App'
 import { PriceEditDvds } from '../edit-price-components/PriceEditDvds';
+import CardFlipWrapper from '../CardFlipWrapper';
 
 const styles = StyleSheet.create({
   
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   
-  dvds: {
+  tapes: {
     color: 'maroon',
     marginBottom: 30,
     fontSize: 20,
@@ -31,46 +31,21 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
-class CardFlipWrapper extends React.Component { 
 
-  render(){
-    return (
-      <CardFlip ref={(card) => this.card = card} >
-        
-        <TouchableOpacity style={styles.cardContainer}
-         
-          onPress={
-            () => this.card.flip()
-          }
-        >
-          <View style={styles.itemAndPrice}>
-            <Text style={styles.prices}>{`${this.props.dvdsPrice}`}</Text>
-            <Text style={styles.dvds}>{`${this.props.dvds}`}</Text>
-          </View>
-
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.cardContainer}
-          onPress={
-            () => this.card.flip()
-          }
-        >
-          <Text>CD</Text>
-        </TouchableOpacity>  
-      </CardFlip>
-    )
-  }
-}
-export const Dvds = () => {
-  const dvds = "Dvds"
-  const [dvdsPrice] = useContext(DvdsPrice);
+export const Tapes = () => {
+  const tapes = "Tapes"
+  const [tapesPrice] = useContext(TapesPrice);
 
   return (
     <CardFlipWrapper
-      dvds = {dvds}
-      dvdsPrice= {dvdsPrice}
-
-    />
+      cardContainerStyle={styles.cardContainer}
+      itemAndPriceStyle={styles.itemAndPrice}
+      priceStyle={styles.prices}
+      price={tapesPrice}
+      itemStyle={styles.tapes}
+      item={tapes}
+    >
+      <PriceEditTapes/>
+    </CardFlipWrapper>
   ) 
 }
