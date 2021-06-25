@@ -1,11 +1,11 @@
-import React, {useContext} from 'react';
-import CardFlip from 'react-native-card-flip';
-import {View, Text,  TouchableOpacity, StyleSheet } from 'react-native';
-import { AlbumsPrice } from '../../App';
-import { PriceEditAlbums } from '../edit-price-components/PriceEditAlbums';
+import React, {useContext} from 'react'
+import {StyleSheet} from 'react-native';
+import {TapesPrice} from '../../App'
+import { PriceEditTapes } from '../edit-price-components/PriceEditTapes';
+import CardFlipWrapper from '../CardFlipWrapper';
 
 const styles = StyleSheet.create({
-
+  
   cardContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   
-  albums: {
+  tapes: {
     color: 'maroon',
     marginBottom: 30,
     fontSize: 20,
@@ -32,47 +32,20 @@ const styles = StyleSheet.create({
   },
 })
 
-
-class CardFlipWrapper extends React.Component { 
-
-  render(){
-    return (
-      <CardFlip ref={(card) => this.card = card} >
-        
-        <TouchableOpacity style={styles.cardContainer}
-         
-          onPress={
-            () => this.card.flip()
-          }
-        >
-          <View style={styles.itemAndPrice}>
-            <Text style={styles.prices}>{`${this.props.albumsPrice}`}</Text>
-            <Text style={styles.albums}>{`${this.props.albums}`}</Text>
-          </View>
-
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.card}
-          onPress={
-            () => this.card.flip()
-          }
-        >
-          <Text>CD</Text>
-        </TouchableOpacity>  
-      </CardFlip>
-    )
-  }
-}
-export const Albums = () => {
-  const albums = 'Albums';
-  const [albumsPrice] = useContext(AlbumsPrice);
+export const Tapes = () => {
+  const tapes = "Tapes"
+  const [tapesPrice] = useContext(TapesPrice);
 
   return (
     <CardFlipWrapper
-      albums = {albums}
-      albumsPrice= {albumsPrice}
-
-    />
+      cardContainerStyle={styles.cardContainer}
+      itemAndPriceStyle={styles.itemAndPrice}
+      priceStyle={styles.prices}
+      price={tapesPrice}
+      itemStyle={styles.tapes}
+      item={tapes}
+    >
+      <PriceEditTapes/>
+    </CardFlipWrapper>
   ) 
 }
