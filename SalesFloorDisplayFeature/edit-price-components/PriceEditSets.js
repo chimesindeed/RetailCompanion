@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingLeft: 12,
     backgroundColor: 'black',
-    color: 'white',
+    color: 'tan',
   },
 })
 
