@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   SALogo: {
-    letterSpacing: 1,
+    letterSpacing: 2,
     fontWeight: '700',
     color: 'navy',
     fontSize: 44,
