@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const Tapes = () => {
+export const Cds = () => {
   const tapes = "Tapes"
   const [tapesPrice] = useContext(TapesPrice);
 
