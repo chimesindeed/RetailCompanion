@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {StyleSheet} from 'react-native';
 import {TapesPrice} from '../../App'
-import { PriceEditTapes } from '../edit-price-components/PriceEditTapes';
+import {PriceEditTapes} from '../edit-price-components/PriceEditTapes';
 import CardFlipWrapper from '../CardFlipWrapper';
 
 const styles = StyleSheet.create({

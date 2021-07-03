@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   
-  tapes: {
+  dvds: {
     color: 'maroon',
     marginBottom: 30,
     fontSize: 20,
@@ -33,16 +33,16 @@ const styles = StyleSheet.create({
 })
 
 export const Dvds = () => {
-  const tapes = "Tapes"
-  const [tapesPrice] = useContext(TapesPrice);
+  const dvds = "Dvds"
+  const [dvdsPrice] = useContext(DvdsPrice);
 
   return (
     <CardFlipWrapper
       cardContainerStyle={styles.cardContainer}
       itemAndPriceStyle={styles.itemAndPrice}
       priceStyle={styles.prices}
-      price={tapesPrice}
-      itemStyle={styles.tapes}
+      price={dvdsPrice}
+      itemStyle={styles.dvds}
       item={tapes}
     >
       <PriceEditTapes/>
