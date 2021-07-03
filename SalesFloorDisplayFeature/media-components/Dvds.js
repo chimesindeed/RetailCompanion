@@ -45,7 +45,7 @@ export const Dvds = () => {
       itemStyle={styles.dvds}
       item={tapes}
     >
-      <PriceEditTapes/>
+      <PriceEditDvds/>
     </CardFlipWrapper>
   ) 
 }
