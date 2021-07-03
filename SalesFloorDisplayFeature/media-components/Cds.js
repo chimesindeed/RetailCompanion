@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 })
 
 export const Cds = () => {
-  const tapes = "Cds"
+  const cds = "Cds"
   const [cdsPrice] = useContext(CdsPrice);
 
   return (
@@ -41,9 +41,9 @@ export const Cds = () => {
       cardContainerStyle={styles.cardContainer}
       itemAndPriceStyle={styles.itemAndPrice}
       priceStyle={styles.prices}
-      price={tapesPrice}
-      itemStyle={styles.tapes}
-      item={tapes}
+      price={cdsPrice}
+      itemStyle={styles.cds}
+      item={cds}
     >
       <PriceEditCds/>
     </CardFlipWrapper>

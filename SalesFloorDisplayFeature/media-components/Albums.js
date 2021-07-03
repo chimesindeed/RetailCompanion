@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {StyleSheet} from 'react-native';
-import {TapesPrice} from '../../App'
-import { PriceEditTapes } from '../edit-price-components/PriceEditTapes';
+import {AlbumsPrice} from '../../App'
+import { PriceEditAlbums } from '../edit-price-components/PriceEditTapes';
 import CardFlipWrapper from '../CardFlipWrapper';
 
 const styles = StyleSheet.create({
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   
-  tapes: {
+  albums: {
     color: 'maroon',
     marginBottom: 30,
     fontSize: 20,
@@ -33,19 +33,19 @@ const styles = StyleSheet.create({
 })
 
 export const Tapes = () => {
-  const tapes = "Tapes"
-  const [tapesPrice] = useContext(TapesPrice);
+  const albums = "Albums"
+  const [albumsPrice] = useContext(AlbumsPrice);
 
   return (
     <CardFlipWrapper
       cardContainerStyle={styles.cardContainer}
       itemAndPriceStyle={styles.itemAndPrice}
       priceStyle={styles.prices}
-      price={tapesPrice}
-      itemStyle={styles.tapes}
-      item={tapes}
+      price={albumsPrice}
+      itemStyle={styles.albums}
+      item={albums}
     >
-      <PriceEditTapes/>
+      <PriceEditAlbums/>
     </CardFlipWrapper>
   ) 
 }
