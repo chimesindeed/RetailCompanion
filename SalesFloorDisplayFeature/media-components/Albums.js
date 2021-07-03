@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {StyleSheet} from 'react-native';
 import {AlbumsPrice} from '../../App'
-import { PriceEditAlbums } from '../edit-price-components/PriceEditTapes';
+import { PriceEditAlbums } from '../edit-price-components/PriceEditAlbums';
 import CardFlipWrapper from '../CardFlipWrapper';
 
 const styles = StyleSheet.create({
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const Tapes = () => {
+export const Albums = () => {
   const albums = "Albums"
   const [albumsPrice] = useContext(AlbumsPrice);
 

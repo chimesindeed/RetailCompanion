@@ -43,7 +43,7 @@ export const Dvds = () => {
       priceStyle={styles.prices}
       price={dvdsPrice}
       itemStyle={styles.dvds}
-      item={tapes}
+      item={dvds}
     >
       <PriceEditDvds/>
     </CardFlipWrapper>
