@@ -10,7 +10,7 @@ export default class CardFlipWrapper extends React.Component {
         
         <TouchableOpacity style={this.props.cardContainerStyle}
          
-          onPress={
+          onLongPress={
             () => this.card.flip()
           }
         >
@@ -23,7 +23,7 @@ export default class CardFlipWrapper extends React.Component {
 
         <TouchableOpacity
           style={this.props.cardContainerStyle}
-          onPress={
+          onLongPress={
             () => this.card.flip()
           }
         >
