@@ -15,7 +15,7 @@ let ScreenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   sideBySide: {
-    backgroundColor: 'lightblue',
+    backgroundColor: 'black',
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignSelf: 'flex-start',
@@ -24,26 +24,26 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     marginLeft: 7,
     paddingLeft: 10,
-    paddingTop: 7,
     marginBottom: 11,
   },
   inputBox: {
     width: 60,
-    height: 37,
-    paddingTop: 10,
+    height: 28,
+    paddingTop: 5,
     paddingLeft: 12,
     backgroundColor: 'black',
     color: 'white',
   },
   button: {
     width: 60,
-    height: 37,
-    paddingTop: 10,
+    height: 28,
+    paddingTop: 5,
     paddingLeft: 12,
     backgroundColor: 'black',
     color: 'white',
   },
 })
+
 
 export const PriceEditSoftcover = () => {
   const [softcoverInput, setSoftcoverInput] = useState('');
