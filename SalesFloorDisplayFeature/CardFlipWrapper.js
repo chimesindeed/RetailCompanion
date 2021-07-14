@@ -5,6 +5,8 @@ import {View, Text, TouchableOpacity} from 'react-native';
 export default class CardFlipWrapper extends React.Component { 
 
   render(){
+
+
     return (
       <CardFlip ref={(card) => this.card = card} >
         
@@ -27,8 +29,19 @@ export default class CardFlipWrapper extends React.Component {
             () => this.card.flip()
           }
         >
-          {this.props.children}
+          {
+           React.Children.map(
+             this.props.children,
+             (child, i) => {
+               return React.cloneElement(child, {
+                 flip: () => this.card.flip()
+               })
+             }
+
+           )
+          }
         </TouchableOpacity>  
+
       </CardFlip>
     )
   }
