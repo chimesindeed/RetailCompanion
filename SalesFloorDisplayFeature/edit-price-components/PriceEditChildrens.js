@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
 })
 
 
-export const PriceEditChildrens = () => {
+export const PriceEditChildrens = (props) => {
+  console.log(props)
   const [childrensInput, setChildrensInput] = useState('');
   
   const [childrensPrice, setChildrensPrice] = useContext(ChildrensPrice);
@@ -80,6 +81,7 @@ export const PriceEditChildrens = () => {
     setChildrensPrice(result);
     AsyncStorage.setItem('childrensPrice', result.toString());
     clearInput();
+    props.flip();
   };
 
   return (
