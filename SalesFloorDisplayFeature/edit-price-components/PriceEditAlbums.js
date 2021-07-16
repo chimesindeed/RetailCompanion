@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const PriceEditAlbums = () => {
+export const PriceEditAlbums = (props) => {
   const [albumsInput, setAlbumsInput] = useState('');
   
   const [albumsPrice, setAlbumsPrice] = useContext(AlbumsPrice);
@@ -75,7 +75,7 @@ export const PriceEditAlbums = () => {
       : (result = albumsInput);
     setAlbumsPrice(result);
     AsyncStorage.setItem('albumsPrice', result.toString());
-    clearInput();
+    props.flip();
   };
   
   return (
