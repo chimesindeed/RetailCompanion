@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 })
 
 
-export const PriceEditDvds = () => {
+export const PriceEditDvds = (props) => {
   
   const [dvdsInput, setDvdsInput] = useState('');
   
@@ -75,7 +75,7 @@ export const PriceEditDvds = () => {
       : (result = dvdsInput);
     setDvdsPrice(result);
     AsyncStorage.setItem('dvdsPrice', result.toString());
-    clearInput();
+    props.flip();
   };
  
   return (
