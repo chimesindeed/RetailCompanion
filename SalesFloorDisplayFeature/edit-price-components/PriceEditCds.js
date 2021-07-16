@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const PriceEditCds = () => {
+export const PriceEditCds = (props) => {
 
   const [cdsInput, setCdsInput] = useState('');
 
@@ -75,7 +75,7 @@ export const PriceEditCds = () => {
       : (result = cdsInput);
     setCdsPrice(result);
     AsyncStorage.setItem('cdsPrice', result.toString());
-    clearInput();
+    props.flip();
   };
 
 
