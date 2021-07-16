@@ -80,7 +80,6 @@ export const PriceEditChildrens = (props) => {
       : (result = childrensInput);
     setChildrensPrice(result);
     AsyncStorage.setItem('childrensPrice', result.toString());
-    clearInput();
     props.flip();
   };
 
