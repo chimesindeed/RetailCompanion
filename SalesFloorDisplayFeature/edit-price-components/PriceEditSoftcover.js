@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 })
 
 
-export const PriceEditSoftcover = () => {
+export const PriceEditSoftcover = (props) => {
   const [softcoverInput, setSoftcoverInput] = useState('');
   
   const [softcoverPrice, setSoftcoverPrice] = useContext(SoftcoverPrice);
@@ -73,7 +73,7 @@ export const PriceEditSoftcover = () => {
       : (result = softcoverInput);
     setSoftcoverPrice(result);
     AsyncStorage.setItem('softcoverPrice', result.toString());
-    clearInput();
+   props.flip();
   };
  
   return (
