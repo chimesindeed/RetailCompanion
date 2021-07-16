@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const PriceEditTapes = () => {
+export const PriceEditTapes = (props) => {
   const [tapesInput, setTapesInput] = useState('');
 
   const [tapesPrice, setTapesPrice] = useContext(TapesPrice);
@@ -73,7 +73,7 @@ export const PriceEditTapes = () => {
       : (result = tapesInput);
     setTapesPrice(result);
     AsyncStorage.setItem('tapesPrice', result.toString());
-    clearInput();
+    props.flip();
   };
  
   return (
