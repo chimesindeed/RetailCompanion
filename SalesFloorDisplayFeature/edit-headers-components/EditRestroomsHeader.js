@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
   },
 })
 
-export const PriceEditAlbums = (props) => {
-  const [albumsInput, setAlbumsInput] = useState('');
+export const EditRestroomsHeader = (props) => {
+  const [restroomsHeaderInput, setRestroomsHeaderInput] = useState('');
   
-  const [albumsPrice, setAlbumsPrice] = useContext(AlbumsPrice);
+  const [restroomsHeader, setRestroomsHeader] = useContext(RestroomsHeader);
 
 
   const input = React.createRef();
