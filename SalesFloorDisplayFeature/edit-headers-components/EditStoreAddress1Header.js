@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
-  AlbumsPrice,
+  StoreAddress1Header,
 } from '../../App';
 
 let ScreenHeight = Dimensions.get('window').height;
@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
   },
 })
 
-export const PriceEditAlbums = (props) => {
-  const [albumsInput, setAlbumsInput] = useState('');
+export const StoreAddress1Header = (props) => {
+  const [storeAddress1HeaderInput, setStoreAddress1HeaderInput] = useState('');
   
-  const [albumsPrice, setAlbumsPrice] = useContext(AlbumsPrice);
+  const [storeAddress1Header, setStoreAddress1Header] = useContext(StoreAddress1Header);
 
 
   const input = React.createRef();
