@@ -45,8 +45,9 @@ const styles = StyleSheet.create({
 })
 
 export const EditExchangePolicyHeader = (props) => {
+  const [ExchangePolicyHeaderInput, setExchangePolicyHeaderInput] = useState('');
   
-  const [exchangePolicyHeader, setExchangePolicyHeader] = useContext(ExchangePolicyHeader);
+  const [ExchangePolicyHeader, setExhcangePolicyHeader] = useContext(ExchangePolicyHeader);
 
 
   const input = React.createRef();
