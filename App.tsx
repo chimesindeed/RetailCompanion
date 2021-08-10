@@ -20,6 +20,7 @@ export const CdsPrice = React.createContext('');
 export const DvdsPrice = React.createContext('');
 export const SetsPrice = React.createContext('');
 
+export const SALogo = React.createContext('');
 export const StoreAddress1 = React.createContext('');
 export const StoreAddress2 = React.createContext('');
 export const StorePhone = React.createContext('');
@@ -37,6 +38,7 @@ const App = () => {
   const [cdsPrice, setCdsPrice] = useState<number>(1.99);
   const [dvdsPrice, setDvdsPrice] = useState<number>(2.99);
   const [setsPrice, setSetsPrice] = useState<string>('As Marked');
+  const [sALogo, setSALogo] = useState<string>("S.A. Retail - Store Companion");
   const [storeAddress1, setStoreAddress1] = useState<string>('536 W. 46th St');
   const [storeAddress2, setStoreAddress2] = useState<string>('10th & 11th Ave');
   const [storePhone, setStorePhone] = useState<string>('212.757.2311');
@@ -215,43 +217,45 @@ const App = () => {
   }, []);
 
   return (
-    <StoreAddress1.Provider value={[storeAddress1, setStoreAddress1]}>
-      <StoreAddress2.Provider value={[storeAddress2, setStoreAddress2]}>
-        <StorePhone.Provider value={[storePhone, setStorePhone]}>
-          <ChildrensPrice.Provider value={[childrensPrice, setChildrensPrice]}>
-            <SoftcoverPrice.Provider
-              value={[softcoverPrice, setSoftcoverPrice]}>
-              <HardcoverPrice.Provider
-                value={[hardcoverPrice, setHardcoverPrice]}>
-                <AlbumsPrice.Provider value={[albumsPrice, setAlbumsPrice]}>
-                  <TapesPrice.Provider value={[tapesPrice, setTapesPrice]}>
-                    <CdsPrice.Provider value={[cdsPrice, setCdsPrice]}>
-                      <DvdsPrice.Provider value={[dvdsPrice, setDvdsPrice]}>
-                        <SetsPrice.Provider value={[setsPrice, setSetsPrice]}>
-                          <NavigationContainer>
-                            <Drawer.Navigator initialRouteName="SalesFloorDisplayScreen">
-                              <Drawer.Screen
-                                name="SalesFloorDisplayScreen"
-                                component={SalesFloorDisplayScreen}
-                              />
-                              <Drawer.Screen
-                                name="Price & Header Settings"
-                                component={EditPrices}
-                              />
-                              
-                            </Drawer.Navigator>
-                          </NavigationContainer>
-                        </SetsPrice.Provider>
-                      </DvdsPrice.Provider>
-                    </CdsPrice.Provider>
-                  </TapesPrice.Provider>
-                </AlbumsPrice.Provider>
-              </HardcoverPrice.Provider>
-            </SoftcoverPrice.Provider>
-          </ChildrensPrice.Provider>
-        </StorePhone.Provider>
-      </StoreAddress2.Provider>
-    </StoreAddress1.Provider>
+    <SALogo.Provider value={[sALogo, setSALogo]}>
+      <StoreAddress1.Provider value={[storeAddress1, setStoreAddress1]}>
+        <StoreAddress2.Provider value={[storeAddress2, setStoreAddress2]}>
+          <StorePhone.Provider value={[storePhone, setStorePhone]}>
+            <ChildrensPrice.Provider value={[childrensPrice, setChildrensPrice]}>
+              <SoftcoverPrice.Provider
+                value={[softcoverPrice, setSoftcoverPrice]}>
+                <HardcoverPrice.Provider
+                  value={[hardcoverPrice, setHardcoverPrice]}>
+                  <AlbumsPrice.Provider value={[albumsPrice, setAlbumsPrice]}>
+                    <TapesPrice.Provider value={[tapesPrice, setTapesPrice]}>
+                      <CdsPrice.Provider value={[cdsPrice, setCdsPrice]}>
+                        <DvdsPrice.Provider value={[dvdsPrice, setDvdsPrice]}>
+                          <SetsPrice.Provider value={[setsPrice, setSetsPrice]}>
+                            <NavigationContainer>
+                              <Drawer.Navigator initialRouteName="SalesFloorDisplayScreen">
+                                <Drawer.Screen
+                                  name="SalesFloorDisplayScreen"
+                                  component={SalesFloorDisplayScreen}
+                                />
+                                <Drawer.Screen
+                                  name="Price & Header Settings"
+                                  component={EditPrices}
+                                />
+                                
+                              </Drawer.Navigator>
+                            </NavigationContainer>
+                          </SetsPrice.Provider>
+                        </DvdsPrice.Provider>
+                      </CdsPrice.Provider>
+                    </TapesPrice.Provider>
+                  </AlbumsPrice.Provider>
+                </HardcoverPrice.Provider>
+              </SoftcoverPrice.Provider>
+            </ChildrensPrice.Provider>
+          </StorePhone.Provider>
+        </StoreAddress2.Provider>
+      </StoreAddress1.Provider>
+    </SALogo.Provider>
   );
 };
 export default App;
