@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {StyleSheet} from 'react-native';
-import {CdsPrice} from '../../App'
+import {CdsPriceContext} from '../../App'
 import { PriceEditCds } from '../edit-price-components/PriceEditCds';
 import CardFlipWrapper from '../CardFlipWrapper';
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
 export const Cds = () => {
   const cds = "Cds"
-  const [cdsPrice] = useContext(CdsPrice);
+  const [cdsPrice] = useContext(CdsPriceContext);
 
   return (
     <CardFlipWrapper
