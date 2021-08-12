@@ -11,21 +11,21 @@ import {EditPrices} from './SalesFloorDisplayFeature/EditPrices';
 import SalesFloorDisplayScreen from './SalesFloorDisplayFeature/SalesFloorDisplayScreen';
 
 
-export const ChildrensPrice = React.createContext('');
-export const SoftcoverPrice = React.createContext('');
-export const HardcoverPrice = React.createContext('');
-export const AlbumsPrice = React.createContext('');
-export const TapesPrice = React.createContext('');
-export const CdsPrice = React.createContext('');
-export const DvdsPrice = React.createContext('');
-export const SetsPrice = React.createContext('');
+export const ChildrensPriceContext = React.createContext('');
+export const SoftcoverPriceContext = React.createContext('');
+export const HardcoverPriceContext = React.createContext('');
+export const AlbumsPriceContext = React.createContext('');
+export const TapesPriceContext = React.createContext('');
+export const CdsPriceContext = React.createContext('');
+export const DvdsPriceContext = React.createContext('');
+export const SetsPriceContext = React.createContext('');
 
-export const SALogo = React.createContext('');
-export const StoreAddress1 = React.createContext('');
-export const StoreAddress2 = React.createContext('');
-export const StorePhone = React.createContext('');
-export const DeliveryPeople = React.createContext('');
-export const InstagramLink = React.createContext('');
+export const StoreLogoContext = React.createContext('');
+export const StoreAddress1Context = React.createContext('');
+export const StoreAddress2Context = React.createContext('');
+export const StorePhoneContext = React.createContext('');
+export const DeliveryPeopleContext = React.createContext('');
+export const InstagramLinkContext = React.createContext('');
 
 const Drawer = createDrawerNavigator();
 
@@ -217,20 +217,20 @@ const App = () => {
   }, []);
 
   return (
-    <SALogo.Provider value={[sALogo, setSALogo]}>
-      <StoreAddress1.Provider value={[storeAddress1, setStoreAddress1]}>
-        <StoreAddress2.Provider value={[storeAddress2, setStoreAddress2]}>
-          <StorePhone.Provider value={[storePhone, setStorePhone]}>
-            <ChildrensPrice.Provider value={[childrensPrice, setChildrensPrice]}>
-              <SoftcoverPrice.Provider
+    <StoreLogoContext.Provider value={[sALogo, setSALogo]}>
+      <StoreAddress1Context.Provider value={[storeAddress1, setStoreAddress1]}>
+        <StoreAddress2Context.Provider value={[storeAddress2, setStoreAddress2]}>
+          <StorePhoneContext.Provider value={[storePhone, setStorePhone]}>
+            <ChildrensPriceContext.Provider value={[childrensPrice, setChildrensPrice]}>
+              <SoftcoverPriceContext.Provider
                 value={[softcoverPrice, setSoftcoverPrice]}>
-                <HardcoverPrice.Provider
+                <HardcoverPriceContext.Provider
                   value={[hardcoverPrice, setHardcoverPrice]}>
-                  <AlbumsPrice.Provider value={[albumsPrice, setAlbumsPrice]}>
-                    <TapesPrice.Provider value={[tapesPrice, setTapesPrice]}>
-                      <CdsPrice.Provider value={[cdsPrice, setCdsPrice]}>
-                        <DvdsPrice.Provider value={[dvdsPrice, setDvdsPrice]}>
-                          <SetsPrice.Provider value={[setsPrice, setSetsPrice]}>
+                  <AlbumsPriceContext.Provider value={[albumsPrice, setAlbumsPrice]}>
+                    <TapesPriceContext.Provider value={[tapesPrice, setTapesPrice]}>
+                      <CdsPriceContext.Provider value={[cdsPrice, setCdsPrice]}>
+                        <DvdsPriceContext.Provider value={[dvdsPrice, setDvdsPrice]}>
+                          <SetsPriceContext.Provider value={[setsPrice, setSetsPrice]}>
                             <NavigationContainer>
                               <Drawer.Navigator initialRouteName="SalesFloorDisplayScreen">
                                 <Drawer.Screen
@@ -244,18 +244,18 @@ const App = () => {
                                 
                               </Drawer.Navigator>
                             </NavigationContainer>
-                          </SetsPrice.Provider>
-                        </DvdsPrice.Provider>
-                      </CdsPrice.Provider>
-                    </TapesPrice.Provider>
-                  </AlbumsPrice.Provider>
-                </HardcoverPrice.Provider>
-              </SoftcoverPrice.Provider>
-            </ChildrensPrice.Provider>
-          </StorePhone.Provider>
-        </StoreAddress2.Provider>
-      </StoreAddress1.Provider>
-    </SALogo.Provider>
+                          </SetsPriceContext.Provider>
+                        </DvdsPriceContext.Provider>
+                      </CdsPriceContext.Provider>
+                    </TapesPriceContext.Provider>
+                  </AlbumsPriceContext.Provider>
+                </HardcoverPriceContext.Provider>
+              </SoftcoverPriceContext.Provider>
+            </ChildrensPriceContext.Provider>
+          </StorePhoneContext.Provider>
+        </StoreAddress2Context.Provider>
+      </StoreAddress1Context.Provider>
+    </StoreLogoContext.Provider>
   );
 };
 export default App;
